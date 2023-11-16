@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         let stocks = {
+        fruits: ["strawberry", "grapes", "banana","apple"],
+        liquid:["water", "ice"],
+        holder:["cone", "cup", "stick"],
+        toppings:["chocolate", "peanuts"]
+    };
+    let is_shop_open = false;
+    
+    // let order = () =>{
+    //     return new Promise( (resolve, reject)=>{
+    //         if(true){
+    //             resolve()
+    //         }
+    //         else{
+    //             reject()
+    //         }
+    //     })
+    // }
+
+    // order( )
+    // .then( )
+    // .then( )
+    // .then( )
+    // .catch( )
+    // .finally( )
+
+    // async function order
+    let stocks1={
+                fruits:["apple","strawberry","grapes","banana"],
+                liquid:["water","ice"],
+                holder:["cone","cup","stick"],
+              toppings:["choclates","peanuts"]
+            };
+
+            let is_shop_open1 =true;
+
+
+            function time(ms){
+                return new Promise( (resolve, reject)=>{
+                    if(is_shop_open1){
+                        setTimeout(resolve,ms)
+                    }
+                    else{
+                        reject(console.log("shop is closed"));
+                    }
+                });
+            }
+
+
+
+            async function kitchen(){
+                try{
+
+                    await time(2000)
+                    console.log(`${stocks1.fruits[2]} was selected`)
+                    await time(1000)
+                    console.log("start the production")
+                    await time(2000)
+                    console.log("cut the fruits")
+                    await time(2000)
+                    console.log(`${stocks1.liquid[0]} and ${stocks1.liquid[1]}`)
+                    await time(1000)
+                    console.log("start the machine")
+                    await time(2000)
+                    console.log(`icecream placed on  ${stocks1.holder[0]}`)
+                    await time(3000)
+                    console.log(`${stocks1.toppings[0]} was selected`)
+                    await time(2000)
+                    console.log("serve icecream")
+                }
+
+                catch(error){
+                    console.log("cusyomer left",error)
+                }
+
+                finally{
+                    console.log("day ended, shop is closed")
+                }
+            }
+
+            kitchen();
+
+    </script>
+</body>
+</html>
